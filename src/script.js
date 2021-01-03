@@ -22,13 +22,9 @@ itemPrice.forEach((e) => {
 
 //function (both increment and decrement)
 incrementBtns.forEach((incrementBtn, index) => {
-  let parentEl = incrementBtn.parentElement.parentElement;
-  let qtySelect = parentEl.querySelector(".qty");
-  let itemSelect = parentEl.querySelector(".item-price");
-
   incrementBtn.onclick = () => {
-    let qty = parseInt(qtySelect.innerText);
-    let itemVal = parseInt(itemSelect.innerText);
+    const dataObj = declareProperty(incrementBtn);
+    let { qty, itemVal } = dataObj;
     qty++;
     itemVal += itemSet[index];
     netVal -= itemSet[index];
@@ -39,13 +35,9 @@ incrementBtns.forEach((incrementBtn, index) => {
 
 //Decrement button (function)
 decrementBtns.forEach((decrementBtn, index) => {
-  let parentEl = decrementBtn.parentElement.parentElement;
-  let qtySelect = parentEl.querySelector(".qty");
-  let itemSelect = parentEl.querySelector(".item-price");
-
   decrementBtn.onclick = () => {
-    let qty = parseInt(qtySelect.innerText);
-    let itemVal = parseInt(itemSelect.innerText);
+    const dataObj = declareProperty(decrementBtn);
+    let { qty, itemVal } = dataObj;
     if (qty === 1 && itemVal === itemSet[index]) {
       return "";
     } else {
@@ -60,10 +52,34 @@ decrementBtns.forEach((decrementBtn, index) => {
 
 //Selects property of item, quantity
 function selectProperty(btn, qty, itemVal) {
-  let parentEl = btn.parentElement.parentElement;
-  let qtySelect = parentEl.querySelector(".qty");
-  let itemSelect = parentEl.querySelector(".item-price");
+  const prop = propertySelector(btn);
+  const { qtySelect, itemSelect } = prop;
   qtySelect.innerText = qty;
   itemSelect.innerText = itemVal;
   netPrice.innerText = `$${netVal}`;
+}
+
+//Declare property (qty, itemPrice)
+function declareProperty(btn) {
+  const prop = propertySelector(btn);
+  const { qtySelect, itemSelect } = prop;
+  let qty = parseInt(qtySelect.innerText);
+  let itemVal = parseInt(itemSelect.innerText);
+
+  return {
+    qty: qty,
+    itemVal: itemVal,
+  };
+}
+
+//Parent, quantity, itemprice selector
+function propertySelector(btn) {
+  const parentEl = btn.parentElement.parentElement;
+  const qtySelect = parentEl.querySelector(".qty");
+  const itemSelect = parentEl.querySelector(".item-price");
+
+  return {
+    qtySelect: qtySelect,
+    itemSelect: itemSelect,
+  };
 }

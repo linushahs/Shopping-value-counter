@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+body {
+  background-color: whitesmoke;
+}
+h2 {
+  text-align: center;
+  margin: 1rem 0;
+}
+.net-price {
+  color: tomato;
+}
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin: 5rem;
+}
+.item {
+  background-color: #fff;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+}
+.item > .item-img {
+  display: block;
+  padding: 3rem;
+  background-color: tomato;
+  width: 50px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  opacity: 0.7;
+  position: relative;
+}
+.item > .item-img::after {
+  content: "Item(image)";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+.item2 > .item-img {
+  background-color: rgb(57, 207, 57);
+}
+
+.item3 > .item-img {
+  background-color: rgb(228, 44, 11);
+}
+
+.item-value {
+  color: tomato;
+  margin-bottom: 1rem;
+}
+
+.increment-btn,
+.decrement-btn,
+.qty-btn {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  margin: 0 0.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.increment-btn {
+  background-color: rgb(57, 207, 57);
+  color: white;
+}
+
+.decrement-btn {
+  background-color: rgb(243, 89, 62);
+  color: white;
+}
+
+.increment-btn:hover,
+.decrement-btn:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

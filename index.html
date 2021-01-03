@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Value Counter</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <h2>Net-value: <span class="net-price"></span></h2>
+    <div class="items">
+      <article class="item item1">
+        <div class="item-img"></div>
+        <!--Important: class(net-price) -->
+        <div class="item-value">$<span class="item-price">4333</span></div>
+        <!--Important: class(item-price) -->
+        <div class="item-part">
+          <button class="increment-btn">
+            <!--Important: class(increment-btn) -->+
+          </button>
+          <button class="qty-btn">
+            Quantity: <span class="qty"></span>
+            <!--Important: class(qty) -->
+          </button>
+          <button class="decrement-btn">
+            <!--Important: class(decrement-btn) -->-
+          </button>
+        </div>
+      </article>
+      <article class="item item2">
+        <div class="item-img"></div>
+        <div class="item-value">$<span class="item-price">5633</span></div>
+        <div class="item-part">
+          <button class="increment-btn">+</button>
+          <button class="qty-btn">Quantity: <span class="qty"></span></button>
+          <button class="decrement-btn">-</button>
+        </div>
+      </article>
+      <article class="item item3">
+        <div class="item-img"></div>
+        <div class="item-value">$<span class="item-price">1233</span></div>
+        <div class="item-part">
+          <button class="increment-btn">+</button>
+          <button class="qty-btn">Quantity: <span class="qty"></span></button>
+          <button class="decrement-btn">-</button>
+        </div>
+      </article>
+      <article class="item item4">
+        <div class="item-img"></div>
+        <div class="item-value">$<span class="item-price">2999</span></div>
+        <div class="item-part">
+          <button class="increment-btn">+</button>
+          <button class="qty-btn">Quantity: <span class="qty"></span></button>
+          <button class="decrement-btn">-</button>
+        </div>
+      </article>
+    </div>
+
+    <script src="./src/script.js"></script>
+  </body>
+</html>

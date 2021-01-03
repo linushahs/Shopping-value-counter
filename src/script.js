@@ -22,9 +22,13 @@ itemPrice.forEach((e) => {
 
 //function (both increment and decrement)
 incrementBtns.forEach((incrementBtn, index) => {
-  let qty = qtySet;
-  let itemVal = itemSet[index];
+  let parentEl = incrementBtn.parentElement.parentElement;
+  let qtySelect = parentEl.querySelector(".qty");
+  let itemSelect = parentEl.querySelector(".item-price");
+
   incrementBtn.onclick = () => {
+    let qty = parseInt(qtySelect.innerText);
+    let itemVal = parseInt(itemSelect.innerText);
     qty++;
     itemVal += itemSet[index];
     netVal -= itemSet[index];
